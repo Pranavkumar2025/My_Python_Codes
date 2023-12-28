@@ -26,7 +26,10 @@ sumArr = [[0 for j in range(m)] for i in range(n)] #initialization methond
 
 
 print("First Matrix is: ")
-print(arr1)
+for i in range(n):
+    for j in range(m):
+        print(arr1[i][j],end=' ')
+    print()
 
 print("Second Matrix is: ")
 for i in range(n):
@@ -34,11 +37,15 @@ for i in range(n):
         print(arr2[i][j],end=' ')
     print()
 
-print("Addition of Matrix is: ")
+print("Multiplication of Matrix is: ")
 for i in range(n):
     for j in range(m):
-        sumArr[i][j] = arr1[i][j]+arr2[i][j]
-        print(sumArr[i][j], end=' ')
+        sum =0
+        for k in range(n):
+            prd = arr1[i][k] * arr2[k][j]
+            sum = sum + prd
+        sumArr[i][j] = sum
+        print(sumArr[i][j],end=' ')    
     print()
 
 
